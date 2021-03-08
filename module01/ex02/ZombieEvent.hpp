@@ -6,7 +6,7 @@
 /*   By: lsmit <lsmit@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/30 18:02:38 by lsmit         #+#    #+#                 */
-/*   Updated: 2020/11/30 18:02:43 by lsmit         ########   odam.nl         */
+/*   Updated: 2021/02/16 11:30:40 by lukesmit      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class	ZombieEvent
 {
 	public:
-	void	setZombieType();
-	Zombie*	newZombie(std::string name);
-	Zombie*	randomChump();
-}
+	void			setZombieType(Zombie *zombie);
+	Zombie*			newZombie(std::string name);
+	void			randomChump();
+};
 
 #endif

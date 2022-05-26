@@ -2,7 +2,7 @@ NAME = replace
 
 SRC = main.cpp
 
-FLAG = -Wall -Wextra -Werror
+FLAG = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(SRC)
 	clang++ $(FLAGS) $(SRC) -o $(NAME)

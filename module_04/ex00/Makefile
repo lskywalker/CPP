@@ -1,6 +1,6 @@
-NAME = ClapTrap
+NAME = Animal
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 

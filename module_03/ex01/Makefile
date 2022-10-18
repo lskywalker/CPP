@@ -2,13 +2,20 @@ NAME = ScavTrap
 
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 
+OBJ = ${SRC:%.cpp=%.o}
+
 FLAG = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(SRC)
-	clang++ $(FLAGS) $(SRC) -o $(NAME)
+	c++ $(FLAGS) $(SRC) -o $(NAME)
 
-%.o: %.c
-	clang++ $(FLAGS) -c -o $@ $<
+%.o: %.cpp
+	c++ $(FLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(NAME) $(OBJ)
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all

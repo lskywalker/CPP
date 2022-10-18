@@ -8,31 +8,26 @@ std::ostream &operator<<(std::ostream &output, Fixed const &value)
 
 Fixed::Fixed(void)
 {
-	// std::cout << "Default constructor called" << std::endl;
 	value = 0;
 }
 
 Fixed::Fixed(int num)
 {
-	// std::cout << "Int constructor called" << std::endl;
 	value = num << bitCount;
 }
 
 Fixed::Fixed(const float num)
 {
-	// std::cout << "Float constructor called" << std::endl;
 	value = roundf(num *(1 << Fixed::bitCount));
 }
 
 Fixed::Fixed(Fixed const &fixed)
 {
-	// std::cout << "Copy constructor called" << std::endl;
 	*this = fixed;
 }
 
 Fixed::~Fixed(void)
 {
-	// std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
@@ -93,13 +88,13 @@ bool Fixed::operator!=(const Fixed &ref)
 
 Fixed Fixed::operator+(const Fixed &ref)
 {
-	Fixed tmp(value + ref.value);
+	Fixed tmp(toFloat() + ref.toFloat());
 	return (tmp);
 }
 
 Fixed Fixed::operator-(const Fixed &ref)
 {
-	Fixed tmp(value - ref.value);
+	Fixed tmp(toFloat() - ref.toFloat());
 	return (tmp);
 }
 
@@ -111,7 +106,7 @@ Fixed Fixed::operator*(const Fixed &ref)
 
 Fixed Fixed::operator/(const Fixed &ref)
 {
-	Fixed tmp(value / ref.value);
+	Fixed tmp(toFloat() / ref.toFloat());
 	return (tmp);
 }
 

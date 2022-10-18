@@ -18,10 +18,10 @@ Fixed::Fixed(const float num)
 	value = roundf(num * (1 << Fixed::bitCount));
 }
 
-Fixed::Fixed(Fixed const &ref)
+Fixed::Fixed(Fixed const &fixed)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = ref; 
+	*this = fixed;
 }
 
 Fixed::~Fixed(void)
@@ -44,7 +44,6 @@ int	Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "Default constructor called" << std::endl;
 	value = raw;
 }
 

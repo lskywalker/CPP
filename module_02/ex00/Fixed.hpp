@@ -8,15 +8,15 @@ class   Fixed
 {
 	public:
 		Fixed();
-		Fixed(const Fixed &f);
+		Fixed(const Fixed &fixed);
 		~Fixed();
-		Fixed & operator = (const Fixed &f);
+		Fixed & operator = (Fixed const &ref);
 
 		int					getRawBits(void) const;
 		void				setRawBits(int const raw);
 	private:
-		int				 	nb;
-		static const int	fracbits;
+		int				 	value;
+		static const int	bitCount = 8;
 };
 
 #endif

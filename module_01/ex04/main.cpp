@@ -6,7 +6,7 @@
 /*   By: lsmit <lsmit@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/08 19:47:34 by lsmit         #+#    #+#                 */
-/*   Updated: 2022/03/08 22:22:27 by lsmit         ########   odam.nl         */
+/*   Updated: 2022/10/18 13:37:37 by lsmit         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int		main(int argc, char **argv)
 			i = read.find(toreplace, i);
 			if (i == read.npos)
 				break ;
-			// read.replace(i, toreplace.length(), replacewith);
 			read = ft_replace(read, i, toreplace.length(), replacewith);
 			i += replacewith.length();
 		}

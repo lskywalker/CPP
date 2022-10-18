@@ -6,7 +6,7 @@
 /*   By: lsmit <lsmit@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/08 16:21:33 by lsmit         #+#    #+#                 */
-/*   Updated: 2022/03/08 16:34:09 by lsmit         ########   odam.nl         */
+/*   Updated: 2022/10/13 17:16:37 by lsmit         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class	HumanA{
 		HumanA(std::string name, Weapon &weapon);
 		std::string	name;
 		void		attack();
-		Weapon		*weapon;
+		Weapon		&weapon;
 };
 
 #endif

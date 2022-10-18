@@ -6,7 +6,7 @@
 /*   By: lsmit <lsmit@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/08 16:20:43 by lsmit         #+#    #+#                 */
-/*   Updated: 2022/03/08 19:46:25 by lsmit         ########   odam.nl         */
+/*   Updated: 2022/10/18 13:36:03 by lsmit         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int		main(void)
 	bob.attack();
 	}
 	{
-	Weapon club = Weapon();
+	Weapon club = Weapon("AXE");
 	HumanB jim("Jim");
+	// jim.attack();
 	jim.setWeapon(club);
 	jim.attack();
 	club.setType("a huge sword");

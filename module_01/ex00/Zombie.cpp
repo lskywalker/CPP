@@ -6,7 +6,7 @@
 /*   By: lsmit <lsmit@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/01/25 15:08:43 by lsmit         #+#    #+#                 */
-/*   Updated: 2022/01/25 18:40:42 by lsmit         ########   odam.nl         */
+/*   Updated: 2022/10/13 17:10:15 by lsmit         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ Zombie::~Zombie()
     std::cout << this->name << " DIED" << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : name(name)
 {
-    this->name = name;
 }
 
 void    Zombie::announce()

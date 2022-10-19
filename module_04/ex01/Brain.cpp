@@ -5,9 +5,9 @@ Brain::Brain()
 	std::cout << "A Brain appeared!" << std::endl;
 }
 
-Brain::Brain(Brain const &ref)
+Brain::Brain(Brain const &cop)
 {
-	*this = ref;
+	*this = cop;
 }
 
 Brain	&Brain::operator=(Brain const &var)

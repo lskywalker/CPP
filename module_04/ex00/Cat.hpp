@@ -7,10 +7,10 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		Cat(Cat const &ref);
+		Cat(Cat const &cop);
 		virtual ~Cat();
 		std::string		getType() const;
-		Cat				&operator=(Cat const &ref);
+		Cat				&operator=(Cat const &cop);
 		void			makeSound() const;
 };
 

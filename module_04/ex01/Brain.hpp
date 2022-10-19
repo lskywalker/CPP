@@ -9,7 +9,7 @@ class Brain {
         Brain();
         ~Brain();
         Brain   &operator=(Brain const &var);
-        Brain(Brain const &ref);
+        Brain(Brain const &cop);
 };
 
 #endif

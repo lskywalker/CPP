@@ -11,9 +11,9 @@ Animal::~Animal(void)
 }
 
 
-Animal::Animal(Animal const &ref)
+Animal::Animal(Animal const &cop)
 {
-	*this = ref;
+	*this = cop;
 	std::cout << "Animal Copied!" << std::endl;
 }
 

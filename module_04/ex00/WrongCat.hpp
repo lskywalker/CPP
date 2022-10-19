@@ -7,10 +7,10 @@ class WrongCat: public WrongAnimal
 {
 	public:
 		WrongCat();
-		WrongCat(WrongCat const &ref);
+		WrongCat(WrongCat const &cop);
 		~WrongCat();
 		std::string		getType() const;
-		WrongCat				&operator=(WrongCat const &ref);
+		WrongCat				&operator=(WrongCat const &cop);
 };
 
 #endif

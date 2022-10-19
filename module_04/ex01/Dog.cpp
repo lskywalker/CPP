@@ -8,12 +8,12 @@ Dog::Dog()
 	type = "Dog";
 }
 
-Dog::Dog(Dog const &ref)
+Dog::Dog(Dog const &cop)
 {
-	Brain*	brains = new Brain(*(ref.brain));
+	Brain*	brains = new Brain(*(cop.brain));
 	std::cout << "Dog Copied!" << std::endl;
 	brain = brains;
-	type = ref.type;
+	type = cop.type;
 }
 
 std::string		Dog::getType() const
@@ -21,11 +21,11 @@ std::string		Dog::getType() const
 	return (type);
 }
 
-Dog		&Dog::operator=(Dog const &ref)
+Dog		&Dog::operator=(Dog const &cop)
 {
 	for (int i = 0; i < 100; i++)
-		brain->ideas[i] = ref.brain->ideas[i];
-	type = ref.type;
+		brain->ideas[i] = cop.brain->ideas[i];
+	type = cop.type;
 	std::cout << "Dog Copied!" << std::endl;
 	return (*this);
 }

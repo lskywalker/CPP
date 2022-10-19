@@ -6,9 +6,9 @@ Cat::Cat()
 	type = "Cat";
 }
 
-Cat::Cat(Cat const &ref)
+Cat::Cat(Cat const &cop)
 {
-	type = ref.type;
+	type = cop.type;
 }
 
 std::string		Cat::getType() const
@@ -16,9 +16,9 @@ std::string		Cat::getType() const
 	return (type);
 }
 
-Cat		&Cat::operator=(Cat const &ref)
+Cat		&Cat::operator=(Cat const &cop)
 {
-	type = ref.type;
+	type = cop.type;
 	std::cout << "Cat Copied! (Copycat)" << std::endl;
 	return (*this);
 }

@@ -5,9 +5,9 @@ WrongAnimal::WrongAnimal()
     std::cout << "WrongAnimal Spawned!" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(WrongAnimal const &ref)
+WrongAnimal::WrongAnimal(WrongAnimal const &cop)
 {
-    *this = ref;
+    *this = cop;
     std::cout << "WrongAnimal Copied!" << std::endl;
 }
 

@@ -138,7 +138,7 @@ const Fixed Fixed::operator--(int)
 
 Fixed Fixed::min(const Fixed &ref1, const Fixed &ref2)
 {
-	if (ref1.getRawBits() > ref2.getRawBits())
+	if (ref1.getRawBits() < ref2.getRawBits())
 		return (ref1);
 	else if (ref1.getRawBits() == ref2.getRawBits())
 		return (ref1);

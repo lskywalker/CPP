@@ -7,10 +7,10 @@ class Dog : public Animal
 {
 	public:
 		Dog();
-		Dog(Dog const &cop);
+		Dog(Dog const &copy);
 		virtual ~Dog();
 		std::string		getType() const;
-		Dog				&operator=(Dog const &cop);
+		Dog				&operator=(Dog const &copy);
 		void			makeSound() const;
 };
 

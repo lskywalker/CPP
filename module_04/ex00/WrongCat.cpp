@@ -6,14 +6,14 @@ WrongCat::WrongCat()
     type = "WrongCat";
 }
 
-WrongCat::WrongCat(WrongCat const &cop)
+WrongCat::WrongCat(WrongCat const &copy)
 {
-    type = cop.type;
+    type = copy.type;
 }
 
-WrongCat    &WrongCat::operator=(WrongCat const &cop)
+WrongCat    &WrongCat::operator=(WrongCat const &copy)
 {
-    type = cop.type;
+    type = copy.type;
     std::cout << "WrongCat Copied!" << std::endl;
     return (*this);
 }

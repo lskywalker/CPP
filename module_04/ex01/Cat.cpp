@@ -2,18 +2,18 @@
 
 Cat::Cat()
 {
-	Brain*	brains = new Brain();
+	Brain*	brain = new Brain();
 	std::cout << "Cat Spawned!" << std::endl;
-	brain = brains;
+	catBrain = brain;
 	type = "Cat";
 }
 
-Cat::Cat(Cat const &cop)
+Cat::Cat(Cat const &copy)
 {
-	Brain* brains = new Brain(*(cop.brain));
+	Brain* brain = new Brain(*(copy.catBrain));
 	std::cout << "Cat Copied!" << std::endl;
-	brain = brains;
-	type = cop.type;
+	catBrain = brain;
+	type = copy.type;
 }
 
 std::string		Cat::getType() const
@@ -21,12 +21,13 @@ std::string		Cat::getType() const
 	return (type);
 }
 
-Cat		&Cat::operator=(Cat const &cop)
+Cat		&Cat::operator=(Cat const &copy)
 {
-	for (int i = 0; i < 100; i++)
-		brain->ideas[i] = cop.brain->ideas[i];
-	type = cop.type;
+	type = copy.type;
 	std::cout << "Cat Copied! (Copycat)" << std::endl;
+	if (brain)
+		delete brain;
+	brain = new Brain(*copy.brain);
 	return (*this);
 }
 
@@ -39,4 +40,9 @@ Cat::~Cat()
 {
 	delete brain;
 	std::cout << "Cat Died!" << std::endl;
+}
+
+Brain*	Cat::brain()
+{
+	return (catBrain);
 }

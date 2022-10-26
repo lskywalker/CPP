@@ -6,9 +6,9 @@ Dog::Dog()
 	type = "Dog";
 }
 
-Dog::Dog(Dog const &cop)
+Dog::Dog(Dog const &copy)
 {
-	type = cop.type;
+	type = copy.type;
 }
 
 std::string		Dog::getType() const
@@ -16,9 +16,9 @@ std::string		Dog::getType() const
 	return (type);
 }
 
-Dog		&Dog::operator=(Dog const &cop)
+Dog		&Dog::operator=(Dog const &copy)
 {
-	type = cop.type;
+	type = copy.type;
 	std::cout << "Dog Copied!" << std::endl;
 	return (*this);
 }

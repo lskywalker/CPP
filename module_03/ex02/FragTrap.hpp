@@ -8,19 +8,10 @@ class FragTrap: public ClapTrap
 	public:
 		FragTrap();
 		FragTrap(std::string _name);
-		virtual ~FragTrap();
+		~FragTrap();
 
-		void	highFivesGuys(void);
-		void	printname();
-		virtual void	attack(const std::string &target);
-		virtual void	takeDamage(unsigned int amount);
-		virtual void	beRepaired(unsigned int amount);
-	private:
-		std::string		name_;
-		unsigned int	hitpoints_;
-		unsigned int	energypoints_;
-		unsigned int	attackdamage_;
+		void	highFivesGuys();
+		void	attack(const std::string &target);
 };
-
 
 #endif

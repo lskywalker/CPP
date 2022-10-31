@@ -11,15 +11,7 @@ class ScavTrap: public ClapTrap
 		~ScavTrap();
 
 		void	guardGate();
-		void	printname();
 		void	attack(const std::string &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-	private:
-		std::string		name_;
-		unsigned int	hitpoints_;
-		unsigned int	energypoints_;
-		unsigned int	attackdamage_;
 };
 
 #endif

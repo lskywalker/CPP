@@ -1,19 +1,12 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void)
+ClapTrap::ClapTrap(void) : hitpoints_(10), energypoints_(10), attackdamage_(0)
 {
-	hitpoints_ = 10;
-	energypoints_ = 10;
-	attackdamage_ = 0;
 	std::cout << "ClapTrap created!" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name) : name_(name), hitpoints_(10), energypoints_(10), attackdamage_(0)
 {
-	name_ = name;
-	hitpoints_ = 10;
-	energypoints_ = 10;
-	attackdamage_ = 0;
 	std::cout << "ClapTrap [" << name << "] has been created!" << std::endl;
 }
 
@@ -25,10 +18,9 @@ ClapTrap::~ClapTrap(void)
 		std::cout << "ClapTrap destroyed!" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &target)
+ClapTrap::ClapTrap(const ClapTrap &target) : name_(target.name_), hitpoints_(target.hitpoints_),
+						energypoints_(target.energypoints_), attackdamage_(target.attackdamage_)
 {
-	name_ = target.name_;
-	hitpoints_ = target.hitpoints_;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &target)

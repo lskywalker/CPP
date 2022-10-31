@@ -1,19 +1,12 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void): ClapTrap()
+FragTrap::FragTrap(void) : ClapTrap("", 100, 50, 20)
 {
-	hitpoints_ = 100;
-	energypoints_ = 100;
-	attackdamage_ = 30;
 	std::cout << "FragTrap created!" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name): ClapTrap(name)
+FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 50, 20)
 {
-	name_ = name;
-	hitpoints_ = 100;
-	energypoints_ = 100;
-	attackdamage_ = 30;
 	std::cout << "FragTrap [" << name << "] has been created!" << std::endl;
 }
 
@@ -25,55 +18,28 @@ FragTrap::~FragTrap(void)
 		std::cout << "FragTrap destroyed!" << std::endl;
 }
 
-void	FragTrap::highFivesGuys(void)
+void	FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap gives high fives!" << std::endl;
+	std::cout << "FragTrap [" << name_ << "] wants a high five!" << std::endl;
 }
 
 void	FragTrap::attack(std::string const &target)
 {
 	if (hitpoints_ <= 0)
 	{
-		printname();
+		std::cout << "FragTrap [" << name_ << "]";
 		std::cout << " I'm dying!" << std::endl;
 		return ;
 	}
 	if (energypoints_ == 0)
 	{
-		printname();
+		std::cout << "FragTrap [" << name_ << "]";
 		std::cout << "Not enough enery to attack!" << std::endl;
 		return ;
 	}
-	printname();
-	energypoints_ -= 10;
+	std::cout << "FragTrap [" << name_ << "]";
+	energypoints_ -= 1;
 	std::cout << " attacks [" << target << "], ";
 	std::cout << "causing : " << attackdamage_ << " damage! ";
 	std::cout << "Energypoints (" << energypoints_ << ")" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	if (hitpoints_ < amount)
-		hitpoints_ = 0;
-	else
-		hitpoints_ -= amount;
-	printname();
-	std::cout << " takes: " << amount << " damage! ";
-	std::cout << "HP (" << hitpoints_ << ")" << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	hitpoints_ += amount;
-
-	printname();
-	energypoints_ -= 10;
-	std::cout << " has been healed by: " << amount << "! ";
-	std::cout << "HP (" << hitpoints_ << "), ";
-	std::cout << "Energypoints (" << energypoints_ << ")" << std::endl;
-}
-
-void	FragTrap::printname(void)
-{
-	std::cout << "FragTrap [" << name_ << "]";
 }

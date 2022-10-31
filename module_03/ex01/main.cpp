@@ -2,7 +2,7 @@
 
 int	main(void)
 {
-	ScavTrap	scav("Monster");
+	ScavTrap	scav("Gorilla");
 
 	scav.attack("Zombie");
 	scav.takeDamage(8);

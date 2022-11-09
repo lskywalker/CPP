@@ -1,33 +1,29 @@
 #include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal("Cat")
 {
-	Brain*	brain = new Brain();
-	std::cout << "Cat Spawned!" << std::endl;
-	catBrain = brain;
-	type = "Cat";
+	this->brain = new Brain();
 }
 
-Cat::Cat(Cat const &copy)
+Cat::Cat(Cat const &copy) : Animal(copy)
 {
-	Brain* brain = new Brain(*(copy.catBrain));
-	std::cout << "Cat Copied!" << std::endl;
-	catBrain = brain;
-	type = copy.type;
+	*this = copy;
+}
+
+Cat::~Cat()
+{
+	delete this->brain;
 }
 
 std::string		Cat::getType() const
 {
-	return (type);
+	return (this->type);
 }
 
 Cat		&Cat::operator=(Cat const &copy)
 {
-	type = copy.type;
-	std::cout << "Cat Copied! (Copycat)" << std::endl;
-	if (brain)
-		delete brain;
-	brain = new Brain(*copy.brain);
+	this->type = copy.type;
+	*(this->brain) = *(copy.getBrain());
 	return (*this);
 }
 
@@ -36,13 +32,7 @@ void	Cat::makeSound() const
 	std::cout << "* Miauw *" << std::endl;
 }
 
-Cat::~Cat()
+Brain	*Cat::getBrain() const
 {
-	delete brain;
-	std::cout << "Cat Died!" << std::endl;
-}
-
-Brain*	Cat::brain()
-{
-	return (catBrain);
+	return (this->brain);
 }

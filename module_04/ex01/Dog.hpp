@@ -2,7 +2,6 @@
 #define DOG_HPP
 
 # include "Animal.hpp"
-# include "Brain.hpp"
 
 class Dog : public Animal
 {
@@ -12,11 +11,11 @@ class Dog : public Animal
 		virtual ~Dog();
 		std::string		getType() const;
 		Dog				&operator=(Dog const &copy);
-		void			makeSound() const;
-		Brain			*brain;
+		virtual void	makeSound() const;
+		virtual Brain	*getBrain() const;
 
 	private:
-		Brain	*dogBrain;
+		Brain	*brain;
 };
 
 #endif

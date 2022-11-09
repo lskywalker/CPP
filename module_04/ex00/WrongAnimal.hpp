@@ -7,9 +7,10 @@ class WrongAnimal
 {
     public:
 		WrongAnimal();
-		~WrongAnimal();
-		WrongAnimal	&operator=(WrongAnimal const &val);
+		WrongAnimal(std::string type);
+		virtual ~WrongAnimal();
 		WrongAnimal(WrongAnimal const &copy);
+		WrongAnimal	&operator=(WrongAnimal const &val);
 		virtual void	makeSound() const;
 		std::string		getType() const;
 

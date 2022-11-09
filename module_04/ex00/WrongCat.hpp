@@ -8,9 +8,9 @@ class WrongCat: public WrongAnimal
 	public:
 		WrongCat();
 		WrongCat(WrongCat const &copy);
-		~WrongCat();
-		std::string		getType() const;
 		WrongCat				&operator=(WrongCat const &copy);
+		virtual ~WrongCat();
+		std::string		getType() const;
 };
 
 #endif

@@ -1,32 +1,29 @@
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal("Dog")
 {
-	Brain*	brains = new Brain();
-	std::cout << "Dog Spawned!" << std::endl;
-	brain = brains;
-	type = "Dog";
+	this->brain = new Brain();
 }
 
-Dog::Dog(Dog const &copy)
+Dog::Dog(Dog const &copy) : Animal(copy)
 {
-	Brain*	brains = new Brain(*(copy.brain));
-	std::cout << "Dog Copied!" << std::endl;
-	brain = brains;
-	type = copy.type;
+	*this = copy;
+}
+
+Dog::~Dog()
+{
+	delete this->brain;
 }
 
 std::string		Dog::getType() const
 {
-	return (type);
+	return (this->type);
 }
 
 Dog		&Dog::operator=(Dog const &copy)
 {
-	for (int i = 0; i < 100; i++)
-		brain->ideas[i] = copy.brain->ideas[i];
-	type = copy.type;
-	std::cout << "Dog Copied!" << std::endl;
+	this->type = copy.type;
+	*(this->brain) = *(copy.getBrain());
 	return (*this);
 }
 
@@ -35,8 +32,7 @@ void	Dog::makeSound() const
 	std::cout << "* Woof Woof *" << std::endl;
 }
 
-Dog::~Dog()
+Brain	*Dog::getBrain() const
 {
-	delete brain;
-	std::cout << "Dog Died!" << std::endl;
+	return (this->brain);
 }

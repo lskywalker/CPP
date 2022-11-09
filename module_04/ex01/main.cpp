@@ -5,20 +5,18 @@
 
 int main()
 {
-	Cat *cat = new Cat();
-	Dog *dog = new Dog();
-	Cat *cat2 = new Cat(*cat);
-	Dog *dog2 = new Dog(*dog);
+	Animal	*animals[100];
 
-	const Animal *array[4];
-	for (int i = 0; i < 4; i++)
-	{
-		if (i % 2 == 0)
-			array[i] = new Cat();
-		else
-			array[i] = new Dog();
-	}
-	for (int i = 0; i < 4; i++)
-		delete array[i];
+	for (int i = 0; i < 50; i++) // DOG CREATION
+		animals[i] = new Dog();
+	for (int i = 50; i < 100; i++) // CAT CREATION
+		animals[i] = new Cat();
+	for (int i = 0; i < 100; i++) // LET ME HEAR YOU ALL
+		animals[i]->makeSound();
+
+	for (int i = 0; i < 100; i++) // DELETION
+		delete animals[i];
+	
+	while(1);
 	return (0);
 }

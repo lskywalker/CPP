@@ -2,23 +2,23 @@
 
 Brain::Brain()
 {
-	std::cout << "A Brain appeared!" << std::endl;
+	std::cout << "Brain created!" << std::endl;
 }
 
 Brain::Brain(Brain const &copy)
 {
+	std::cout << "Brain copied!" << std::endl;
 	*this = copy;
 }
 
 Brain	&Brain::operator=(Brain const &var)
 {
-	std::cout << "Brain Copied!" << std::endl;
 	for (int i; i < ideas->size(); i++)
-		ideas[i] = var.ideas[i];
+		this->ideas[i] = var.ideas[i];
 	return (*this);
 }
 
 Brain::~Brain()
 {
-	std::cout << "A Brain disappeared!" << std::endl;
+	std::cout << "A Brain destroyed!" << std::endl;
 }

@@ -1,19 +1,24 @@
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal()
+WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
-    std::cout << "WrongAnimal Spawned!" << std::endl;
+    std::cout << type << " Spawned!" << std::endl;
+}
+
+WrongAnimal::WrongAnimal(std::string type_) : type(type_)
+{
+    std::cout << type << " Spawned!" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(WrongAnimal const &copy)
 {
-    *this = copy;
-    std::cout << "WrongAnimal Copied!" << std::endl;
+    this->type = copy.type;
+    std::cout << this->type << " Spawned!" << std::endl;
 }
 
 WrongAnimal     &WrongAnimal::operator=(WrongAnimal const &val)
 {
-    type = val.type;
+    this->type = val.type;
     return (*this);
 }
 
@@ -24,10 +29,10 @@ void    WrongAnimal::makeSound() const
 
 std::string		WrongAnimal::getType() const
 {
-	return (type);
+	return (this->type);
 }
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "WrongAnimal Died!" << std::endl;
+    std::cout << this->type <<" Died!" << std::endl;
 }

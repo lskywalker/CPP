@@ -6,6 +6,8 @@ OBJ = ${SRC:%.cpp=%.o}
 
 FLAG = -Wall -Wextra -Werror -std=c++98
 
+all: $(NAME)
+
 $(NAME): $(SRC)
 	c++ $(FLAGS) $(SRC) -o $(NAME)
 

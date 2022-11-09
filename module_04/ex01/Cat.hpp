@@ -2,7 +2,6 @@
 #define CAT_HPP
 
 # include "Animal.hpp"
-# include "Brain.hpp"
 
 class Cat : public Animal
 {
@@ -12,11 +11,11 @@ class Cat : public Animal
 		virtual ~Cat();
 		std::string		getType() const;
 		Cat				&operator=(Cat const &copy);
-		void			makeSound() const;
-		Brain			*brain;
+		virtual void	makeSound() const;
+		virtual Brain	*getBrain() const;
 	
 	private:
-		Brain	*catBrain;
+		Brain	*brain;
 };
 
 

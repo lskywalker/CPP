@@ -6,6 +6,7 @@
 int main()
 {
 	Animal	*animals[100];
+	Brain	*dogBrain;
 
 	for (int i = 0; i < 50; i++) // DOG CREATION
 		animals[i] = new Dog();
@@ -16,6 +17,15 @@ int main()
 
 	for (int i = 0; i < 100; i++) // DELETION
 		delete animals[i];
+
+	dogBrain = animals[3]->getBrain();
+	dogBrain->addidea("I want to bark", 10);
+	animals[3] = animals[5];
+	dogBrain = animals[5]->getBrain();
+
+	std::cout << dogBrain[5].ideas[10] << std::endl;
+	// Dog	dog(Animal[2]);
+	// Cat cat = Animal[7];
 	
 	while(1);
 	return (0);

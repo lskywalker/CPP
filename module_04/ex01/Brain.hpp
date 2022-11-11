@@ -11,7 +11,9 @@ class Brain {
 		Brain();
 		~Brain();
 		Brain   &operator=(Brain const &var);
-		Brain(Brain const &copy);
+		Brain(Brain &copy);
+
+		void	addidea(std::string idea, int id);
 };
 
 #endif

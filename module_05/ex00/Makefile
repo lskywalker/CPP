@@ -4,7 +4,7 @@ SRC = main.cpp Bureaucrat.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 
-FLAG = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 $(NAME): $(SRC)
 	c++ $(FLAGS) $(SRC) -o $(NAME)

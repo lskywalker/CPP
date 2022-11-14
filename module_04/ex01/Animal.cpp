@@ -2,24 +2,19 @@
 
 Animal::Animal(void) : type("Animal")
 {
-	std::cout << this->type << " Spawned!" << std::endl;
-}
-
-Animal::Animal(std::string type_) : type(type_)
-{
-	std::cout << this->type << " Spawned!" << std::endl;
+	std::cout << "Animal created!" << std::endl;
 }
 
 Animal::~Animal(void)
 {
-	std::cout << this->type << " Died!" << std::endl;
+	std::cout << "Animal Died!" << std::endl;
 }
 
 
 Animal::Animal(Animal const &copy)
 {
-	this->type = copy.type;
-	std::cout << this->type << " Spawned!" << std::endl;
+	*this = copy;
+	std::cout << "Animal Copied!" << std::endl;
 }
 
 Animal  &Animal::operator=(Animal const &val)
@@ -35,5 +30,5 @@ void	Animal::makeSound() const
 
 std::string		Animal::getType() const
 {
-	return (type);
+	return (this->type);
 }

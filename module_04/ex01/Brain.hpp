@@ -5,7 +5,7 @@
 
 class Brain {
 	private:
-		std::string	 ideas[100];
+		static const int	numberOfIdeas = 100;
 
 	public:
 		Brain();
@@ -13,7 +13,7 @@ class Brain {
 		Brain   &operator=(Brain const &var);
 		Brain(Brain &copy);
 
-		void	addidea(std::string idea, int id);
+		std::string		ideas[Brain::numberOfIdeas];
 };
 
 #endif

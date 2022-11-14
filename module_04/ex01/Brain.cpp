@@ -13,17 +13,12 @@ Brain::Brain(Brain &copy)
 
 Brain	&Brain::operator=(Brain const &var)
 {
-	for (size_t i = 0; i < ideas->size(); i++)
+	for (size_t i = 0; i < this->numberOfIdeas; i++)
 		this->ideas[i] = var.ideas[i];
 	return (*this);
 }
 
 Brain::~Brain()
 {
-	std::cout << "A Brain destroyed!" << std::endl;
-}
-
-void	Brain::addidea(std::string idea, int id)
-{
-	this->ideas[id] = idea;
+	std::cout << "Brain destroyed!" << std::endl;
 }

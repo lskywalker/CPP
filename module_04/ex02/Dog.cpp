@@ -1,30 +1,30 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog()
 {
+	this->type = "Dog";
+	std::cout << "Dog has been created!" << std::endl;
 	this->brain = new Brain();
 }
 
-Dog::Dog(Dog const &copy) : Animal(copy)
+Dog::Dog(Dog const &copy)
 {
+	this->brain = new Brain();
 	*this = copy;
+	std::cout << "Dog has been copied!" << std::endl;
 }
 
 Dog::~Dog()
 {
 	delete this->brain;
-}
-
-std::string		Dog::getType() const
-{
-	return (this->type);
+	std::cout << "Dog has been destroyed!" << std::endl;
 }
 
 Dog		&Dog::operator=(Dog const &copy)
 {
-	this->type = copy.type;
+	this->Animal::operator=(copy);
 	*(this->brain) = *(copy.getBrain());
-	return (*this);
+	return *this;
 }
 
 void	Dog::makeSound() const
@@ -34,5 +34,5 @@ void	Dog::makeSound() const
 
 Brain	*Dog::getBrain() const
 {
-	return (this->brain);
+	return(this->brain);
 }

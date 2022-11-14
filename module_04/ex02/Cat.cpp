@@ -1,30 +1,30 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat()
 {
+	this->type = "Cat";
+	std::cout << "Cat has been created!" << std::endl;
 	this->brain = new Brain();
 }
 
-Cat::Cat(Cat const &copy) : Animal(copy)
+Cat::Cat(Cat const &copy)
 {
+	this->brain = new Brain();
 	*this = copy;
+	std::cout << "Cat has been copied!" << std::endl;
 }
 
 Cat::~Cat()
 {
 	delete this->brain;
-}
-
-std::string		Cat::getType() const
-{
-	return (this->type);
+	std::cout << "Cat has been destroyed!" << std::endl;
 }
 
 Cat		&Cat::operator=(Cat const &copy)
 {
-	this->type = copy.type;
+	this->Animal::operator=(copy);
 	*(this->brain) = *(copy.getBrain());
-	return (*this);
+	return *this;
 }
 
 void	Cat::makeSound() const
@@ -34,5 +34,5 @@ void	Cat::makeSound() const
 
 Brain	*Cat::getBrain() const
 {
-	return (this->brain);
+	return(this->brain);
 }

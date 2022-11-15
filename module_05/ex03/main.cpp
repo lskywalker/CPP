@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
-#include "Form.hpp"
+#include "Intern.hpp"
 
 int		main(void)
 {
@@ -91,10 +92,22 @@ int		main(void)
 
 	std::cout << std::endl;
 
-	ShrubberyCreationForm *shrubbery = new ShrubberyCreationForm("Shrubbery");
-	RobotomyRequestForm *robotomy = new RobotomyRequestForm("System");
-	PresidentialPardonForm *presidential = new PresidentialPardonForm("Jack Sparrow");
+	std::cout << "CREATING INTERN:" << std::endl;
+	Intern	*intern = new Intern();
+	std::cout << std::endl;
 
+	std::cout << "INTERN CREATES FORMS:" << std::endl;
+	Form *shrubbery = intern->makeForm("Shrubbery Creation", "Shrubbery");
+	std::cout << std::endl;
+	Form *robotomy = intern->makeForm("Robotomy Request", "System");
+	std::cout << std::endl;
+	Form *presidential = intern->makeForm("Presidential Pardon", "Jack Sparrow");
+	std::cout << std::endl;
+	Form *doesnotexist = intern->makeForm("A very important form", "Joe");
+	std::cout << std::endl;
+	
+	delete doesnotexist;
+	delete intern;
 	std::cout << std::endl;
 
 	std::cout << *shrubbery << std::endl;

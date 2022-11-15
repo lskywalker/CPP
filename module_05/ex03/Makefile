@@ -1,7 +1,7 @@
-NAME = Form
+NAME = Intern
 
 SRC = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
-		PresidentialPardonForm.cpp RobotomyRequestForm.cpp
+		PresidentialPardonForm.cpp RobotomyRequestForm.cpp Intern.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 

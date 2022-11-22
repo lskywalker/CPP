@@ -1,5 +1,9 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat( void ): _name(""), _grade(1)
+{
+}
+
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)

@@ -30,12 +30,16 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "Shrubbery Creation Form destroyed!" << std::endl;
 }
 
-void	ShrubberyCreationForm::execute() const
+void	ShrubberyCreationForm::formAction() const
 {
 	std::ofstream out;
 
 	out.open((this->getTarget() + "_shrubbery").c_str(), std::ofstream::in | std::ofstream::trunc);
-
+	if (!out.is_open())
+	{
+		std::cerr << "Failed to open file!" << std::endl;
+		return ;
+	}
 	out << "       _-_ " << std::endl;
 	out << "    /~~   ~~\\ " << std::endl;
 	out << " /~~         ~~\\ " << std::endl;
@@ -45,4 +49,5 @@ void	ShrubberyCreationForm::execute() const
 	out << "_- -   | | _- _ " << std::endl;
 	out << "  _ -  | |   -_ " << std::endl;
 	out << "      // \\ " << std::endl;
+	out.close();
 }

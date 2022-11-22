@@ -29,7 +29,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	std::cout << "Robotomy Creation Form destroyed!" << std::endl;
 }
 
-void	RobotomyRequestForm::execute() const
+void	RobotomyRequestForm::formAction() const
 {
 	std::srand(std::time(NULL));
 

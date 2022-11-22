@@ -32,7 +32,7 @@ class Form
 		bool				beSigned(const Bureaucrat &bureaucrat);
 
 		void				execute(const Bureaucrat &executor) const;
-		virtual void		formAction() = 0;
+		virtual void		formAction() const = 0;
 
 		class GradeTooHighException : public std::exception
 		{

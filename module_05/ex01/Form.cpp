@@ -6,8 +6,8 @@ Form::Form(const std::string &name, int GradeToSign, int GradeToExecute) :
 	checkGrade();
 }
 
-Form::Form(const Form &copy) : _name(copy.getName()), _GradeToExecute(copy.getGradeToExecute()),
-	_GradeToSign(copy.getGradeToSign()), _isSigned(copy.isSigned())
+Form::Form(const Form &copy) : _name(copy.getName()), _isSigned(copy.isSigned()),
+	_GradeToSign(copy.getGradeToSign()), _GradeToExecute(copy.getGradeToExecute())
 {
 	*this = copy;
 }

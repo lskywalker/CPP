@@ -29,7 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "Presidential Pardon Form destroyed!" << std::endl;
 }
 
-void	PresidentialPardonForm::execute() const
+void	PresidentialPardonForm::formAction() const
 {
 	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox!" << std::endl;
 }

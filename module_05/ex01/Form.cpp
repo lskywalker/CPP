@@ -3,7 +3,7 @@
 Form::Form(const std::string &name, int GradeToSign, int GradeToExecute) :
 	_name(name), _isSigned(false), _GradeToSign(GradeToSign), _GradeToExecute(GradeToExecute)
 {
-
+	checkGrade();
 }
 
 Form::Form(const Form &copy) : _name(copy.getName()), _GradeToExecute(copy.getGradeToExecute()),

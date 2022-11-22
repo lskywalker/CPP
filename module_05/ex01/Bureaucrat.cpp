@@ -1,10 +1,5 @@
 #include "Bureaucrat.hpp"
 
-// Bureaucrat::Bureaucrat( void ): _name(""), _grade(1)
-// {
-
-// }
-
 Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(grade)
 {
 	if (grade < 1)
@@ -15,7 +10,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade) : _name(name), _grade(
 		_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &copy)
+Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName())
 {
 	*this = copy;
 }

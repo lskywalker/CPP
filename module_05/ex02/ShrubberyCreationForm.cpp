@@ -30,7 +30,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << "Shrubbery Creation Form destroyed!" << std::endl;
 }
 
-void	ShrubberyCreationForm::execute() const
+void	ShrubberyCreationForm::formAction() const
 {
 	std::ofstream out;
 

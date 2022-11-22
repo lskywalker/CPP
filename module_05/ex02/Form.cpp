@@ -72,7 +72,7 @@ void	Form::checkExecuted(const Bureaucrat &bureaucrat) const
 		std::cout << _name << " can't be executed by " << bureaucrat.getName() << " because: ";
 		throw GradeTooLowException();
 	}
-	this->execute();
+	this->formAction();
 	
 }
 
@@ -98,6 +98,11 @@ bool	Form::beSigned(const Bureaucrat &bureaucrat)
 		throw GradeTooLowException();
 		return false;
 	}
+}
+
+void	Form::execute(const Bureaucrat &executor) const
+{
+	executor.executeForm(*this);
 }
 
 Form::~Form()

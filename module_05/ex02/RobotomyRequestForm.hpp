@@ -15,7 +15,7 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &copy);
 		~RobotomyRequestForm( void );
 
-	void	execute( void ) const;
+	void	formAction( void ) const;
 };
 
 #endif

@@ -54,8 +54,8 @@ void	identify(Base &p)
 	
 	try
 	{
-		A &aux = dynamic_cast<A&>(p); (void)aux;
-		std::cout << "A class was identified" << std::endl;
+		C &aux = dynamic_cast<C&>(p); (void)aux;
+		std::cout << "C class was identified" << std::endl;
 		return;
 	} catch (...) {}
 

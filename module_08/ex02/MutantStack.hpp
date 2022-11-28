@@ -9,7 +9,7 @@ template <typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container>
 {
 	public:
-		MutantStack();
+		MutantStack() {}
 		MutantStack(const MutantStack &copy) : std::stack<T, Container>(copy)
 		{
 			*this = copy;
